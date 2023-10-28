@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
 
-function LogIn() {
+function Login() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -52,4 +52,4 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+export default Login;
