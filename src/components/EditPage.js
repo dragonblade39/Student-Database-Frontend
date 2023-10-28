@@ -10,7 +10,7 @@ function EditPage() {
   useEffect(() => {
     axios
       .get(
-        "https://student-service-4kvz.onrender.com/update-student/" + obj1.id
+        "https://student-service-4kvz.onrender.com/students/update-student/" + obj1.id
       )
       // .get("http://localhost:5500/students/update-student/" + obj1.id)
       .then((res) => {
