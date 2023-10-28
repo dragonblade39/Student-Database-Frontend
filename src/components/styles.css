@@ -3,13 +3,30 @@ label {
   padding: 10px;
   margin-left: 10px;
 }
-
 input {
+  display: block;
   padding: 10px;
   margin-left: 10px;
-  display: block;
 }
-
 #submit {
   margin-top: 5px;
+}
+
+thead,
+tbody,
+tr,
+td,
+th {
+  width: 100px;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+table {
+  width: 500px;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+button {
+  margin: 2px;
 }

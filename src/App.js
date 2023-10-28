@@ -1,12 +1,19 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Signup from "./components/Signup";
-
+import SignUp from "./components/SignUp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LogIn from "./components/LogIn";
+import ViewTable from "./components/ViewTable";
+import EditPage from "./components/EditPage";
 function App() {
   return (
-    <div>
-      <Signup />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/view" element={<ViewTable />} />
+        <Route path="/edit/:id" element={<EditPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

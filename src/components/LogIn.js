@@ -1,27 +1,20 @@
 import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
-function SignUp() {
+function LogIn() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   let handleSubmit = (event) => {
     const obj = { name, email, password };
-    console.log(obj);
-    const url =
-      "https://student-service-4kvz.onrender.com/students/create-student";
-    // const url = "http://localhost:5500/students/create-student";
+    const url = "https://student-service-4kvz.onrender.com/students/login";
+    // const url = "http://localhost:5500/students/login";
     axios
       .post(url, obj)
       .then((res) => {
-        if (res.status === 200) {
-          alert("Student added successfully");
-        } else {
-          Promise.reject();
-        }
+        alert(res.data);
       })
       .catch((err) => {
         alert(err);
@@ -30,7 +23,7 @@ function SignUp() {
   };
   return (
     <div>
-      <h1>Student Registration Form</h1>
+      <h1>Student Login Page</h1>
       <form onSubmit={handleSubmit}>
         <label for="name">Name</label>
         <input
@@ -55,15 +48,8 @@ function SignUp() {
         />
         <input id="submit" type="submit" value="submit" />
       </form>
-      <h2>Have an account?</h2>
-      <h4>
-        <Link to="/login">Login Page</Link>
-      </h4>
-      <h4>
-        <Link to="/view">View Page</Link>
-      </h4>
     </div>
   );
 }
 
-export default SignUp;
+export default LogIn;
